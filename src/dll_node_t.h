@@ -1,12 +1,17 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
-// VERSION: 2.0
-// ASIGNATURA: Algoritmos y Estructuras de Datos
-// TEMA: 4
-// ESTILO: Google C++ Style Guide
-// COMENTARIOS: 
-
+/**
+  * Universidad de La Laguna
+  * Escuela Superior de Ingeniería y Tecnología
+  * Grado en Ingeniería Informática
+  * Informática Básica
+  *
+  * @file dll_node_t.h
+  * @author Jose Dorta Luis alu0101414676@ull.edu.es
+  * @date 24 april 2021
+  * @brief programa proporcionado por el profesorado para realizar la práctica 5 de Algoritmos y estructura de datos
+  * @bug ningún bug conocido
+  * 
+  */ 
+ 
 #ifndef DLL_NODET_H_
 #define DLL_NODET_H_
 
@@ -42,7 +47,9 @@ template <class T> class dll_node_t {
 };
 
   
-// E/S
+/**
+ * @brief método que permite mostrar por pantalla un objeto de la clase dll_node_t.
+ */
 template <class T> std::ostream& dll_node_t<T>::write(std::ostream& os) const {
   os << data_;
   return os;

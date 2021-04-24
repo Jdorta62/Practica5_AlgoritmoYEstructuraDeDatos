@@ -1,11 +1,16 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
-// VERSION: 2.0
-// ASIGNATURA: Algoritmos y Estructuras de Datos
-// TEMA: 4
-// ESTILO: Google C++ Style Guide
-// COMENTARIOS: 
+/**
+  * Universidad de La Laguna
+  * Escuela Superior de Ingeniería y Tecnología
+  * Grado en Ingeniería Informática
+  * Informática Básica
+  *
+  * @file dll_t.h
+  * @author Jose Dorta Luis alu0101414676@ull.edu.es
+  * @date 24 april 2021
+  * @brief programa proporcionado por el profesorado para realizar la práctica 5 de Algoritmos y estructura de datos
+  * @bug ningún bug conocido
+  * 
+  */
 
 #ifndef DLLT_H_
 #define DLLT_H_
@@ -50,7 +55,9 @@ template <class T> class dll_t {
 };
 
 
-// destructor
+/**
+ * @brief destructor de la clase dll_t.
+ */
 template <class T> dll_t<T>::~dll_t(void) {
   while (head_ != NULL) {
     dll_node_t<T>* aux = head_;
@@ -61,7 +68,9 @@ template <class T> dll_t<T>::~dll_t(void) {
   tail_ = NULL;
 }
 
-// Comprobar si lista vacía
+/**
+ * @brief método que permite saber si la lista está vacía.
+ */
 template <class T> bool dll_t<T>::empty(void) const {
   if (head_ == NULL) {
     assert(tail_ == NULL);
@@ -71,7 +80,10 @@ template <class T> bool dll_t<T>::empty(void) const {
     return false;
 }
 
-// operaciones
+/**
+ * @brief método que permite la insersión por delante de un nodo en la lista.
+ * @param nodo nodo a insertar en la lista.
+ */
 template <class T> void dll_t<T>::push_front(dll_node_t<T>* nodo) {
   assert(nodo != NULL);
 
@@ -86,6 +98,10 @@ template <class T> void dll_t<T>::push_front(dll_node_t<T>* nodo) {
   sz_++;
 }
 
+/**
+ * @brief método que permite la insersión por detrás de un nodo en la lista.
+ * @param nodo nodo a insertar en la lista.
+ */
 template <class T> void dll_t<T>::push_back(dll_node_t<T>* nodo) {
   assert(nodo != NULL);
 
@@ -100,6 +116,9 @@ template <class T> void dll_t<T>::push_back(dll_node_t<T>* nodo) {
   sz_++;
 }
 
+/**
+ * @brief método que permite la extracción del último nodo de la lista.
+ */
 template <class T> dll_node_t<T>* dll_t<T>::pop_back(void) {
   assert(!empty());
 
@@ -115,6 +134,9 @@ template <class T> dll_node_t<T>* dll_t<T>::pop_back(void) {
   return aux;
 }
 
+/**
+ * @brief método que permite la extracción del nodo que encabeza la lista.
+ */
 template <class T> dll_node_t<T>* dll_t<T>::pop_front(void) {
   assert(!empty());
 
@@ -130,6 +152,10 @@ template <class T> dll_node_t<T>* dll_t<T>::pop_front(void) {
   return aux;
 }
 
+/**
+ * @brief método que permite eliminar un nodo de la lista.
+ * @param nodo nodo a eliminar.
+ */
 template <class T> dll_node_t<T>* dll_t<T>::erase(dll_node_t<T>* nodo) {
   assert(nodo != NULL);
 
@@ -147,7 +173,9 @@ template <class T> dll_node_t<T>* dll_t<T>::erase(dll_node_t<T>* nodo) {
   return nodo;
 }
 
-// E/S
+/**
+ * @brief método que permite escribir por pantalla una lista.
+ */
 template <class T> std::ostream& dll_t<T>::write(std::ostream& os) const {
   dll_node_t<T>* aux = head_;
 

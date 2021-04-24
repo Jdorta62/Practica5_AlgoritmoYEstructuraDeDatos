@@ -1,11 +1,16 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
-// VERSION: 2.0
-// ASIGNATURA: Algoritmos y Estructuras de Datos
-// TEMA: 5
-// ESTILO: Google C++ Style Guide
-// COMENTARIOS: 
+/**
+  * Universidad de La Laguna
+  * Escuela Superior de Ingeniería y Tecnología
+  * Grado en Ingeniería Informática
+  * Informática Básica
+  *
+  * @file stack_l_t.h
+  * @author Jose Dorta Luis alu0101414676@ull.edu.es
+  * @date 24 april 2021
+  * @brief programa proporcionado por el profesorado para realizar la práctica 5 de Algoritmos y estructura de datos
+  * @bug ningún bug conocido
+  * 
+  */
 
 #ifndef STACKL_H_
 #define STACKL_H_
@@ -39,28 +44,42 @@ private:
 };
 
 
-// operaciones
+/**
+ * @brief método que permite la insersión de un elemento en la cima de la pila.
+ * @param dato objeto a insertar en la pila.
+ */
 template<class T> void stack_l_t<T>::push(const T& dato) {
   dll_node_t<T>* nodo = new dll_node_t<T>(dato);
   assert(nodo != NULL);
   l_.push_front(nodo);
 }
 
+/**
+ * @brief método que permite la extracción del elemento de la cima de la pila.
+ */
 template<class T> void stack_l_t<T>::pop(void) {
   assert(!empty());
   delete l_.pop_front();
 }
 
+/**
+ * @brief permite conocer el objeto que ocupa la cima de la pila sin extraerlo.
+ */
 template<class T> const T& stack_l_t<T>::top(void) const {
   assert(!empty());
   return l_.get_head()->get_data();
 }
 
+/**
+ * @brief método que permite saber si una lista está vacía.
+ */
 template<class T> bool stack_l_t<T>::empty(void) const {
   return l_.empty();
 }
 
-// E/S
+/**
+ * @brief método que permite mostrar por pantalla el contenido de la pila.
+ */
 template<class T> std::ostream& stack_l_t<T>::write(std::ostream& os) const {
   dll_node_t<T>* aux = l_.get_head();
   while (aux != NULL) { 

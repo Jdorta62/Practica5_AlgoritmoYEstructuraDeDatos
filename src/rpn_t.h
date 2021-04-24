@@ -1,12 +1,16 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
-// VERSION: 2.0
-// ASIGNATURA: Algoritmos y Estructuras de Datos
-// PRÁCTICA Nº: 5
-// ESTILO: Google C++ Style Guide
-// COMENTARIOS: Clase RPN (Reverse Polish Notation)
-
+/**
+  * Universidad de La Laguna
+  * Escuela Superior de Ingeniería y Tecnología
+  * Grado en Ingeniería Informática
+  * Informática Básica
+  *
+  * @file rpn_t.h
+  * @author Jose Dorta Luis alu0101414676@ull.edu.es
+  * @date 24 april 2021
+  * @brief programa proporcionado por el profesorado para realizar la práctica 5 de Algoritmos y estructura de datos
+  * @bug ningún bug conocido
+  * 
+  */
 #ifndef RPNT_H_
 #define RPNT_H_
 
@@ -27,7 +31,7 @@ template <class T> class rpn_t {
   ~rpn_t() {}
 
   // operaciones
-  const int evaluate(queue_l_t<char>&);
+  const double evaluate(queue_l_t<char>&);
 
  private: 
   T stack_;
@@ -35,45 +39,85 @@ template <class T> class rpn_t {
 };
 
 
-// operaciones
-template<class T> const int rpn_t<T>::evaluate(queue_l_t<char>& q) {
+/**
+ * @brief método que permite conocer el resultado de una serie de operaciones del estilo RPN
+ * @param q objeto cola de la clase queue_l_t de tipo char del cual se van a extraer los digitos y operandos.
+ */
+template<class T> const double rpn_t<T>::evaluate(queue_l_t<char>& q) {
+
   while (!q.empty()) 	{
-    char c = q.front();
-    
+    char c = q.front(); 
     q.pop();
     std::cout << "Sacamos de la cola un carácter: " << c;
 
     if (isdigit(c)) {
-      int i = c - '0';
-      // poner código
-      std::cout << " (es un dígito) " << std::endl
-		<< "   Lo metemos en la pila..." << std::endl;
+      double i = c - '0';
+      stack_.push(i);
+      std::cout << " (es un dígito) " << std::endl << "   Lo metemos en la pila..." << std::endl;
     } else {
       std::cout << " (es un operador)" << std::endl;
-      // poner código
+      operate_(c);
     }
   }
-  // poner código
+  return stack_.top();
 }
 
 template<class T> void rpn_t<T>::operate_(const char c) {
-  assert(c == '+' || c == '-' || c == '*' || c == '/');
+  assert(c == '+' || c == '-' || c == '*' || c == '/' || c == 'r' || c == '^' || c == 'l' || c == 'c');
 
-  // poner código
-  std::cout << "   Sacamos de la pila un operando: " << std::endl;
-  
-  // poner código
-  std::cout << "   Sacamos de la pila otro operando: " << std::endl;
-  
+  double first_operand, second_operand, result;
+
+  std::cout << "   Sacamos de la pila un operando: ";
+  second_operand = stack_.top();
+  stack_.pop();
+  std::cout << second_operand << std::endl;
+  if (c != 'r' && c != 'c' && c != 'l') {
+    std::cout << "   Sacamos de la pila otro operando: ";
+    first_operand = stack_.top();
+    stack_.pop();
+    std::cout << first_operand << std::endl;
+  }
   switch (c) {
     case '+':
-      // poner código
+      result = first_operand + second_operand;
       break;
-    // poner código resto de operadores
+
+    case '-':
+      result = first_operand - second_operand;
+      break;
+    
+    case '*':
+      result = first_operand * second_operand;
+      break;
+    
+    case '/':
+      result = first_operand / second_operand;
+      break;
+
+    case '^':
+      result = pow(first_operand,second_operand);
+      break;
+    
+    case 'r':
+      result = sqrt(second_operand);
+      break;
+
+    case 'l':
+      result = log2(second_operand);
+      break;
+
+    case 'c':
+      result = second_operand*second_operand;
+      break;
+    
+    default:
+      std::cout << "Error: no se insertó ningún carácter válido." << std::endl;
+      exit(EXIT_SUCCESS);
+
   }
 
-  // poner código
-  std::cout << "   Metemos en la pila el resultado: " << std::endl;
+  stack_.push(result);
+  std::cout << "   Metemos en la pila el resultado: " << result << std::endl;
 }
 
  
