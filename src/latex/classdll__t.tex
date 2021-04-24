@@ -1,0 +1,91 @@
+\hypertarget{classdll__t}{}\section{dll\+\_\+t$<$ T $>$ Class Template Reference}
+\label{classdll__t}\index{dll\+\_\+t$<$ T $>$@{dll\+\_\+t$<$ T $>$}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classdll__t_a27a43b1367cffa4af8a3551d4373cdf1}\label{classdll__t_a27a43b1367cffa4af8a3551d4373cdf1}} 
+\hyperlink{classdll__t_a27a43b1367cffa4af8a3551d4373cdf1}{$\sim$dll\+\_\+t} (void)
+\begin{DoxyCompactList}\small\item\em destructor de la clase \hyperlink{classdll__t}{dll\+\_\+t}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdll__t_a4283a6fb9a55ff1eed9b7a1fa2bf539c}\label{classdll__t_a4283a6fb9a55ff1eed9b7a1fa2bf539c}} 
+\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$ {\bfseries get\+\_\+tail} (void) const
+\item 
+\mbox{\Hypertarget{classdll__t_adbe6e0e833d5aa9f101444deb31664ec}\label{classdll__t_adbe6e0e833d5aa9f101444deb31664ec}} 
+\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$ {\bfseries get\+\_\+head} (void) const
+\item 
+\mbox{\Hypertarget{classdll__t_a46a23a1f8a930f72fa6e8e8059e2e4dc}\label{classdll__t_a46a23a1f8a930f72fa6e8e8059e2e4dc}} 
+int {\bfseries get\+\_\+size} (void) const
+\item 
+\mbox{\Hypertarget{classdll__t_a103fc51e7aeb0f2e0874aa82fa44f0ab}\label{classdll__t_a103fc51e7aeb0f2e0874aa82fa44f0ab}} 
+bool \hyperlink{classdll__t_a103fc51e7aeb0f2e0874aa82fa44f0ab}{empty} (void) const
+\begin{DoxyCompactList}\small\item\em método que permite saber si la lista está vacía. \end{DoxyCompactList}\item 
+void \hyperlink{classdll__t_aa8cd054c192aa86ac418a2941c1c02ba}{push\+\_\+back} (\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$)
+\begin{DoxyCompactList}\small\item\em método que permite la insersión por detrás de un nodo en la lista. \end{DoxyCompactList}\item 
+void \hyperlink{classdll__t_aa38df54cd7f2a5e60198169a9b4cda26}{push\+\_\+front} (\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$)
+\begin{DoxyCompactList}\small\item\em método que permite la insersión por delante de un nodo en la lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdll__t_a90fffb6ce5603c92c903beede2896e4f}\label{classdll__t_a90fffb6ce5603c92c903beede2896e4f}} 
+\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$ \hyperlink{classdll__t_a90fffb6ce5603c92c903beede2896e4f}{pop\+\_\+back} (void)
+\begin{DoxyCompactList}\small\item\em método que permite la extracción del último nodo de la lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdll__t_aa4e5e659001f308df220e4e64993ab4b}\label{classdll__t_aa4e5e659001f308df220e4e64993ab4b}} 
+\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$ \hyperlink{classdll__t_aa4e5e659001f308df220e4e64993ab4b}{pop\+\_\+front} (void)
+\begin{DoxyCompactList}\small\item\em método que permite la extracción del nodo que encabeza la lista. \end{DoxyCompactList}\item 
+\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$ \hyperlink{classdll__t_ad75998a73ef06762e317723dae45ae2c}{erase} (\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$)
+\begin{DoxyCompactList}\small\item\em método que permite eliminar un nodo de la lista. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classdll__t_a4e26a362b5235db1323150d7202cc0a1}\label{classdll__t_a4e26a362b5235db1323150d7202cc0a1}} 
+std\+::ostream \& \hyperlink{classdll__t_a4e26a362b5235db1323150d7202cc0a1}{write} (std\+::ostream \&=std\+::cout) const
+\begin{DoxyCompactList}\small\item\em método que permite escribir por pantalla una lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdll__t_ad75998a73ef06762e317723dae45ae2c}\label{classdll__t_ad75998a73ef06762e317723dae45ae2c}} 
+\index{dll\+\_\+t@{dll\+\_\+t}!erase@{erase}}
+\index{erase@{erase}!dll\+\_\+t@{dll\+\_\+t}}
+\subsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$ \hyperlink{classdll__t}{dll\+\_\+t}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$}]{nodo }\end{DoxyParamCaption})}
+
+
+
+método que permite eliminar un nodo de la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodo} & nodo a eliminar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdll__t_aa8cd054c192aa86ac418a2941c1c02ba}\label{classdll__t_aa8cd054c192aa86ac418a2941c1c02ba}} 
+\index{dll\+\_\+t@{dll\+\_\+t}!push\+\_\+back@{push\+\_\+back}}
+\index{push\+\_\+back@{push\+\_\+back}!dll\+\_\+t@{dll\+\_\+t}}
+\subsubsection{\texorpdfstring{push\+\_\+back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classdll__t}{dll\+\_\+t}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$}]{nodo }\end{DoxyParamCaption})}
+
+
+
+método que permite la insersión por detrás de un nodo en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodo} & nodo a insertar en la lista. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdll__t_aa38df54cd7f2a5e60198169a9b4cda26}\label{classdll__t_aa38df54cd7f2a5e60198169a9b4cda26}} 
+\index{dll\+\_\+t@{dll\+\_\+t}!push\+\_\+front@{push\+\_\+front}}
+\index{push\+\_\+front@{push\+\_\+front}!dll\+\_\+t@{dll\+\_\+t}}
+\subsubsection{\texorpdfstring{push\+\_\+front()}{push\_front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classdll__t}{dll\+\_\+t}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{\hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t}$<$ T $>$ $\ast$}]{nodo }\end{DoxyParamCaption})}
+
+
+
+método que permite la insersión por delante de un nodo en la lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nodo} & nodo a insertar en la lista. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dll__t_8h}{dll\+\_\+t.\+h}\end{DoxyCompactItemize}

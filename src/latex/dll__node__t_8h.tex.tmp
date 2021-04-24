@@ -1,0 +1,32 @@
+\hypertarget{dll__node__t_8h}{}\section{dll\+\_\+node\+\_\+t.\+h File Reference}
+\label{dll__node__t_8h}\index{dll\+\_\+node\+\_\+t.\+h@{dll\+\_\+node\+\_\+t.\+h}}
+
+
+programa proporcionado por el profesorado para realizar la práctica 5 de Algoritmos y estructura de datos  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for dll\+\_\+node\+\_\+t.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdll__node__t}{dll\+\_\+node\+\_\+t$<$ T $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+programa proporcionado por el profesorado para realizar la práctica 5 de Algoritmos y estructura de datos 
+
+Universidad de La Laguna Escuela Superior de Ingeniería y Tecnología Grado en Ingeniería Informática Informática Básica
+
+\begin{DoxyAuthor}{Author}
+Jose Dorta Luis \href{mailto:alu0101414676@ull.edu.es}{\tt alu0101414676@ull.\+edu.\+es} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 april 2021 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]ningún bug conocido\end{DoxyRefDesc}
