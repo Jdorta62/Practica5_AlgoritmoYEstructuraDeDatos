@@ -44,7 +44,9 @@ int main(void) {
   cola.write();
 
   double r = calculadora.evaluate(cola);
+  const int n = calculadora.opera3('+', 10, 30);
   cout << "Resultado: " << r << endl;
+  std::cout << "Resultado modificación: " << n << std::endl; 
 
   return 0;
 }

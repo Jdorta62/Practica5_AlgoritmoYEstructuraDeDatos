@@ -33,6 +33,8 @@ template <class T> class rpn_t {
   // operaciones
   const double evaluate(queue_l_t<char>&);
 
+  int opera3 (const char, int, int);
+
  private: 
   T stack_;
   void operate_(const char operador);
@@ -120,5 +122,56 @@ template<class T> void rpn_t<T>::operate_(const char c) {
   std::cout << "   Metemos en la pila el resultado: " << result << std::endl;
 }
 
+/**
+ * @brief Modificación.
+ */
+template<class T> int rpn_t<T>::opera3(const char c, int operand1, int operand2) {
+  assert(c == '+' || c == '-' || c == '*' || c == '/' || c == 'r' || c == '^' || c == 'l' || c == 'c' || c == '%');
+  double first_operand = operand1;
+  double second_operand = operand2;
+  int result;
+  switch (c) {
+    case '+':
+      result = first_operand + second_operand;
+      break;
+
+    case '-':
+      result = first_operand - second_operand;
+      break;
+    
+    case '*':
+      result = first_operand * second_operand;
+      break;
+    
+    case '/':
+      result = first_operand / second_operand;
+      break;
+
+    case '^':
+      result = pow(first_operand,second_operand);
+      break;
+    
+    case 'r':
+      result = sqrt(second_operand);
+      break;
+
+    case 'l':
+      result = log2(second_operand);
+      break;
+
+    case 'c':
+      result = second_operand*second_operand;
+      break;
+    
+    case '%':
+      result = ((second_operand/100)*first_operand);
+      break;
+
+    default:
+      std::cout << "Error: no se insertó ningún carácter válido." << std::endl;
+      exit(EXIT_SUCCESS);
+  }
+  return result;
+}
  
 #endif  // RPNT_H_
